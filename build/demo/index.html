@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>lift-dragger demo</title>
+    <script src="../../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../../../polymer/polymer.html">
+    <link rel="import" href="../lift-dragger.html">
+    <style>
+      #offsetter {
+        position: absolute;
+        left: 80px;
+        top: 80px;
+      }
+      
+      #content {
+        display: inline-flex;
+        flex-flow: row wrap;
+      
+        width: 200px;
+      }
+      
+      #content span {
+        background-color: blue;
+      }
+      
+      .over {
+        border: 1px solid black;
+      }
+      
+      .check-over {
+        display: inline-block;
+      }
+      
+      .dropped {
+        border: 2px red solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="offsetter">
+      <lift-dragger id="dragger">
+        <div id="content"><span>here are</span><span>a bunch</span><span>of inline elements</span><span>inside a container</span><span>hopefully, this will get pretty ragged</span></div>
+      </lift-dragger>
+    </div>
+    <div style="width: 200px; height: 200px; background-color: green;" class="check-over"></div>
+    <div style="width: 300px; height: 200px; background-color: yellow;" class="check-over">
+      <div style="width: 300px; height: 100px; background-color: purple;" class="check-over"></div>
+    </div>
+    <script src="lift-dragger-demo.js"></script>
+  </body>
+</html>

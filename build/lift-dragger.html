@@ -1,0 +1,51 @@
+
+<link rel="import" href="../../polymer/polymer.html"/>
+<dom-module id="lift-dragger">
+  <style>
+    :host {
+      box-sizing: border-box;
+    }
+    
+    #container {
+      display: inline-block;
+    }
+    
+    #container * {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    #scaler {
+      display: inline-block;
+      transition: 0.1s all linear;
+    }
+    
+    #scaler:hover {
+      transform: scale(1.05);
+      cursor: -webkit-grab;
+      cursor: grab;
+    
+      transition: 0.2s all ease;
+    }
+    
+    #scaler.lifted {
+      transform: scale(0.8);
+      opacity: 0.3;
+      cursor: -webkit-grabbing;
+      cursor: grabbing;
+    }
+    
+  </style>
+  <template>
+    <div id="container">
+      <div id="scaler">
+        <content></content>
+      </div>
+    </div>
+  </template>
+</dom-module>
+<script src="lift-dragger.js"></script>
